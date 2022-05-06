@@ -3,4 +3,4 @@ def multiply_by_2(a_dictionary):
     new_dictionary = {}
     for x in a_dictionary:
         new_dictionary.update({x: (a_dictionary[x] * 2)})
-        return new_dictionary
+    return new_dictionary
