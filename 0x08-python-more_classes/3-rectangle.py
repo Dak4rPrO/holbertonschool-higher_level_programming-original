@@ -7,7 +7,6 @@ class Rectangle:
     """class Rectangle that defines a rectangle by:(based on 0-rectangle)"""
 
     def __init__(self, width=0, height=0):
-        """aaa"""
         self.width = width
         self.height = height
 
@@ -34,3 +33,16 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        if self.width == 0 or self.height == 0:
+            return 0
+        return (self.width + self.height) * 2
+
+    def __str__(self):
+	if self.width == 0 or self.height == 0:
+		return ""
+    print("#")
