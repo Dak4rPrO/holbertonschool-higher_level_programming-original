@@ -3,9 +3,10 @@
 
 
 class Rectangle:
-    number_of_instances = 0
 
     """class Rectangle that defines a rectangle by:(based on 0-rectangle)"""
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         self.width = width
