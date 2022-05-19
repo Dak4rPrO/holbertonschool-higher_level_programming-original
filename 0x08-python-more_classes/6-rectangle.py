@@ -1,4 +1,5 @@
-#!/usr/bin/python"""class Rectangle"""
+#!/usr/bin/python3
+"""class Rectangle"""
 
 
 class Rectangle:
