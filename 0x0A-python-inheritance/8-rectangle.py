@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""class basegeometry"""
+
+
 class BaseGeometry:
     """ My BaseGeometry class """
 
@@ -10,6 +13,8 @@ class BaseGeometry:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
+"""class rectangle"""
 
 
 class Rectangle(BaseGeometry):
