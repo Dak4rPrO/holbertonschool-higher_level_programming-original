@@ -4,9 +4,11 @@
 
 
 def pascal_triangle(n):
-    tree = [[1]]
+    """ def pascal """
+
     if n <= 0:
-        return tree[n]
+        return []
+    tree = [[1]]
     for x in range(1, n):
         m = [1]
         for y in range(1, x):
