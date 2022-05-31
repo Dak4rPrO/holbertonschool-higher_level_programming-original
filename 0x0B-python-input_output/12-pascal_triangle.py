@@ -6,7 +6,7 @@
 def pascal_triangle(n):
     tree = [[1]]
     if n <= 0:
-        return
+        return tree
     for x in range(1, n):
         m = [1]
         for y in range(1, x):
