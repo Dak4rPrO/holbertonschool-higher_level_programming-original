@@ -5,6 +5,6 @@
 
 def append_write(filename="", text=""):
     """ prototype append_write """
-    
+
     with open(filename, encoding="UTF-8", mode="a") as file:
         return(file.write(text))
