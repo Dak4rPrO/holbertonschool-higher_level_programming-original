@@ -77,15 +77,20 @@ class Rectangle(Base):
     
     def display(self):
         """ def display """
-        string = ""
+        """ string = ""
         if self.__width == 0 or self.__height == 0:
             return string
         else:
-            for i in range(self.__y):
-                for j in range(self.__x):
+            for i in range(self.__height):
+                for j in range(self.__width):
                     string += "#"
                 string += "\n"
-        print(string[:-1])
+        print(string[:-1])"""
+        
+        print(f"\n" * self.__y, end="")
+        for i in range(self.__height):
+            print(f" " * self.__x, end="")
+            print(f"#" * self.__width)
     
     def __str__(self):
         """ def str """
