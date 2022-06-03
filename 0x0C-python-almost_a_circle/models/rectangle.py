@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Write the class Rectangle that inherits from Base """
 
+
 from models.base import Base
 
 
@@ -95,4 +96,22 @@ class Rectangle(Base):
     def __str__(self):
         """ def str """
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
-
+    
+    def update(self, *args, **kwars):
+        """ def update """
+        if args is not None and len(args) != 0:
+            i = 0
+            for arg in args:                
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.__width = arg
+                elif i == 2:
+                    self.__height = arg
+                elif i == 3:                  
+                    self.__x = arg
+                elif i == 4:                    
+                    self.__y = arg
+                i += 1
+        else:
+            return
