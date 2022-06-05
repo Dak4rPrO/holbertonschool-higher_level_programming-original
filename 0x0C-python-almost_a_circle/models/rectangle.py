@@ -24,7 +24,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ def height """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -38,7 +38,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ def width """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -52,7 +52,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ def x """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -88,14 +88,15 @@ class Rectangle(Base):
                 string += "\n"
         print(string[:-1])"""
         
-        print(f"\n" * self.__y, end="")
+        print("\n" * self.__y, end="")
         for i in range(self.__height):
-            print(f" " * self.__x, end="")
-            print(f"#" * self.__width)
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
     
     def __str__(self):
         """ def str """
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -\
+ {self.__width}/{self.__height}")
     
     def update(self, *args, **kwargs):
         """ def update """         
@@ -119,11 +120,10 @@ class Rectangle(Base):
                     if key == "id":
                         self.id = value
                     elif key == "width":
-                        self.__width = value
+                        self.width = value
                     elif key == "height":
-                        self.__height = value
+                        self.height = value
                     elif key == "x":
-                        self.__x = value
+                        self.x = value
                     elif key == "y":
-                        self.__y = value
-                    value += 1
+                        self.y = value
