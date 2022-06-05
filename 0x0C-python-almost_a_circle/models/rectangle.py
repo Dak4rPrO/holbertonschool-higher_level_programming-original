@@ -127,4 +127,3 @@ class Rectangle(Base):
                     elif key == "y":
                         self.__y = value
                     value += 1
-                    
