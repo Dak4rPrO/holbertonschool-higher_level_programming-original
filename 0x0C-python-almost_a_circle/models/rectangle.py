@@ -7,7 +7,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """ class rectangle """
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """ def init """
         self.width = width
@@ -15,7 +15,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-        
+
     @property
     def height(self):
         """ property height """
@@ -43,12 +43,12 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    
+
     @property
     def x(self):
         """ property x """
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """ def x """
@@ -62,7 +62,7 @@ class Rectangle(Base):
     def y(self):
         """ property y """
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """ def y """
@@ -71,11 +71,11 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-        
+
     def area(self):
         """ def area """
         return self.__width * self.__height
-    
+
     def display(self):
         """ def display """
         """ string = ""
@@ -87,31 +87,31 @@ class Rectangle(Base):
                     string += "#"
                 string += "\n"
         print(string[:-1])"""
-        
+
         print("\n" * self.__y, end="")
         for i in range(self.__height):
             print(" " * self.__x, end="")
             print("#" * self.__width)
-    
+
     def __str__(self):
         """ def str """
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -\
  {self.__width}/{self.__height}")
-    
+
     def update(self, *args, **kwargs):
-        """ def update """         
+        """ def update """
         if args is not None and len(args) != 0:
             i = 0
-            for arg in args:                
+            for arg in args:
                 if i == 0:
                     self.id = arg
                 elif i == 1:
                     self.__width = arg
                 elif i == 2:
                     self.__height = arg
-                elif i == 3:                  
+                elif i == 3:
                     self.__x = arg
-                elif i == 4:                    
+                elif i == 4:
                     self.__y = arg
                 i += 1
         else:
@@ -127,6 +127,7 @@ class Rectangle(Base):
                         self.x = value
                     elif key == "y":
                         self.y = value
-                        
+
     def to_dictionary(self):
-        return ()
+        """ def dictionary """
+        return
