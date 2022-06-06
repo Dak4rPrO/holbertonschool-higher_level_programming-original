@@ -29,7 +29,7 @@ class Base:
         """ def save to file """
         if list_objs is None or len(list_objs) == 0:
             return
-        
+
     def from_json_string(json_string):
         """ def json_string """
         if json_string is None or len(json_string) == 0:
