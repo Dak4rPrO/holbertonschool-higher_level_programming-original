@@ -1,18 +1,19 @@
 #!/usr/bin/python3
-""" Call the super class with id, x, y, width and height - this super call will
-use the logic of the __init__ of the Rectangle class. The width and height must
-be assigned to the value of size """
-
+""" square.py """
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ class Square that inherits from Rectangle """
-    
+    """ Creating class Square """
+
     def __init__(self, size, x=0, y=0, id=None):
-        """ def init """
+        """ Initializing class Square """
         super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        """ Rewriting __str__ """
+        return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}")
 
     @property
     def size(self):
@@ -20,10 +21,32 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """ def size"""
+        """ Setting size """
         self.width = value
         self.height = value
-
-    def __str__(self):
-        """ def str """
-        return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}")
+        
+    def  update(self, *args, **kwargs):
+        """ def update """         
+        if args is not None and len(args) != 0:
+            i = 0
+            for arg in args:                
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:                  
+                    self.y = arg
+                i += 1
+        else:
+            if kwargs is not None and len(kwargs) != 0:
+                for key, value in kwargs.items():
+                    if key == "id":
+                        self.id = value
+                    elif key == "size":
+                        self.size = value
+                    elif key == "x":
+                        self.x = value
+                    elif key == "y":
+                        self.y = value
