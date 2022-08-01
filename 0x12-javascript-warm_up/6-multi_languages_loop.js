@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-while (true) {
-  console.log('C is fun\n' + 'Python is cool\n' + 'JavaScript is amazing');
-  break;
+const arry = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+
+for (let i = 0; i < arry.length; i++) {
+  console.log(arry[i]);
 }
