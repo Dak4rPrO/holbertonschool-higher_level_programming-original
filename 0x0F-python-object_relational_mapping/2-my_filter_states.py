@@ -13,7 +13,8 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name = '%s'" % (arg))
+    cur.execute("SELECT * FROM states WHERE name \
+                LIKE BINARY '{}'".format(arg))
     states = cur.fetchall()
 
     for state in states:
