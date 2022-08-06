@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     for row in range(len(cities) - 1):
         print(cities[row][0],  end=', ')
-        print(cities[row + 1][0])
+    print(cities[row + 1][0])
 
     cur.close()
     db.close()
