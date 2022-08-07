@@ -18,9 +18,12 @@ if __name__ == "__main__":
                 AND states.name = %s""", (arg,))
     cities = cur.fetchall()
 
-    for row in range(len(cities) - 1):
-        print(cities[row][0],  end=', ')
-    print(cities[row + 1][0])
+    if (arg == False):
+        for row in range(len(cities) - 1):
+            print(cities[row][0],  end=', ')
+        print(cities[row + 1][0])
+    else:
+        print(" ")        
 
     cur.close()
     db.close()
