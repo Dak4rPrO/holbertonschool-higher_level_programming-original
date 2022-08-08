@@ -36,3 +36,5 @@ if __name__ == "__main__":
         result = session.query(State).get(2)
 
         result.name = 'New Mexico'
+
+        session.commit()
