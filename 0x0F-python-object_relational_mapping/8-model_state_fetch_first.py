@@ -33,11 +33,9 @@ if __name__ == "__main__":
         Session = sessionmaker(bind=engine)
         session = Session()
 
-        result = session.query(State).all()
+        result = session.query(State).first()
 
-        for r in result:
-            if (r is not None):
-                print(r.id, ': ', r.name, sep="")
-                break
-            else:
-                print("Nothing\n")
+        if (result is not None):
+            print(result.id, ': ', result.name, sep="")
+        else:
+            print("Nothing")
