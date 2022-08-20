@@ -7,5 +7,5 @@ import sys
 
 if __name__ == "__main__":
     arg1 = sys.argv[1]
-    with request.get(arg1) as url:
-        print(url.headers.get('X-Request-Id'))
+    response = request.get(arg1) as url:
+        print(response.headers.get('X-Request-Id'))
