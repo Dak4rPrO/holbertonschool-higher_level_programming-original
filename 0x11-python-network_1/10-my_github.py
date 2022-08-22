@@ -6,8 +6,10 @@ import requests
 import sys
 
 if __name__ == "__main__":
+    
     user = sys.argv[1]
     passwrd = sys.argv[2]
+    
     url = 'https://api.github.com/user'
     req = requests.get(url, auth=(user, passwrd))
     print("{}".format(req.json().get('id')))
