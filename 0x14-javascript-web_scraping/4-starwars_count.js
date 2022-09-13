@@ -1,17 +1,15 @@
 #!/usr/bin/node
 
-function starwars () {
-    const episode = process.argv[2];
-    const axios = require('axios');
-    const url = `https://swapi-api.hbtn.io/api/films/${episode}`
+const axios = require('axios');
 
-    axios.get(url)
-      .then((response) => {
-        console.log(`${response.data.title}`);
-      })
-  
-      .catch((error) => {
-        console.log(`${error}`);
-      });
-  }
-  starwars();
+async function Request () {
+  const res = await axios.get(process.argv[2]);
+  const data = res.data;
+  console.log(
+    data.results.filter((film) =>
+      film.characters.some((char) => /18/.test(char))
+    ).length
+  );
+}
+
+Request();
